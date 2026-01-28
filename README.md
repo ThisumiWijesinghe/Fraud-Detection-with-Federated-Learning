@@ -1,105 +1,142 @@
- 🏦 Fraud Detection with Federated Learning
+# Federated Fraud Detection using FedAvg and FedBN
 
+## 📌 Project Overview
 
-📌 Project Overview
+This project implements a **Federated Learning–based fraud detection system** using the **PaySim dataset**. The goal is to simulate a real-world banking scenario where **12 banks (clients)** collaboratively train a fraud detection model **without sharing raw data**.
 
-This project aims to build a fraud detection system for banking transactions using Machine Learning (ML) and Federated Learning (FL).
+We use **Deep Neural Networks (DNNs)** and compare two federated learning strategies:
 
-Problem: Online banking fraud is increasing worldwide. Traditional ML requires collecting sensitive customer data in one place, which risks privacy breaches.
+* **FedAvg (Federated Averaging)**
+* **FedBN (Federated Batch Normalization – optional extension)**
 
-Solution: Use Federated Learning so multiple banks can collaboratively train a model without sharing raw data. This preserves privacy while improving fraud detection.
+The dataset is split across clients in a **Non-IID manner using Dirichlet distribution**, which reflects realistic data heterogeneity among banks.
 
-💡 Example: Imagine 10 banks. Each trains its fraud model locally. Then, instead of sharing data, they only send their trained models to a server. The server performs federated averaging (FedAvg) to create one global model and sends it back. This way, fraud patterns seen in one bank can be learned by all banks — helping detect frauds that would otherwise be missed.
+---
 
-🎯 Project Goals
+## 🏦 Problem Setting
 
-Detect fraudulent transactions accurately.
+* Each bank has its **own transaction data**
+* Fraud patterns are **different for each bank**
+* Data privacy is preserved (no raw data sharing)
+* A central **server coordinates model aggregation**
 
-Compare centralized ML models with federated learning models.
+---
 
-Demonstrate privacy-preserving AI in financial fraud detection.
+## 📊 Dataset
 
-Enable knowledge sharing between banks without exposing sensitive data.
+* **Name:** PaySim – Simulated Mobile Money Transactions
+* **Source:** Kaggle (`ealaxi/paysim1`)
+* **Size:** ~6.3 million transactions
+* **Target Variable:** `isFraud`
 
-📊 Dataset
+### Selected Features
 
-Name: PaySim Dataset
+* `step`
+* `type` (encoded)
+* `amount`
+* `oldbalanceOrg`
+* `newbalanceOrig`
+* `oldbalanceDest`
+* `newbalanceDest`
 
-Size: ~6 million transactions
+---
 
-Features:
+## 🔀 Data Distribution (Non-IID)
 
-type – transaction type (CASH-IN, TRANSFER, etc.)
+* Number of clients: **12 (banks)**
+* Data split method: **Dirichlet distribution**
+* Alpha (α): Controls degree of non-IID (smaller α → more skewed)
+* Fraud samples are **unevenly distributed** across banks
 
-amount – transaction value
+This setup closely matches **real-world banking environments**.
 
-oldbalanceOrg – original balance before transaction
+---
 
-newbalanceOrig – balance after transaction
+## 🧠 Model Architecture (DNN)
 
-isFraud – fraud label (1 = Fraud, 0 = Legitimate)
+Each client trains the same Deep Neural Network locally:
 
+* Input layer
+* Dense layer (ReLU)
+* Dense layer (ReLU)
+* Output layer (Sigmoid)
 
-❓ Why PaySim Dataset?
+Loss Function:
 
-We selected PaySim because:
+* Binary Cross Entropy
 
-It contains millions of transactions, suitable for ML and FL training.
+Optimizer:
 
-The dataset is well-structured and clean, so we can finish within our 3-week timeline.
+* Adam
 
-It simulates real-world mobile banking fraud patterns.
+---
 
-Other datasets (e.g., IEEE-CIS) are very complex and require long preprocessing, not practical for our timeframe.
+## 🔁 Federated Learning Workflow (FedAvg)
 
-Using PaySim with Federated Learning is less common, so our approach will still be unique and impactful.
+1. The **server initializes an empty global model**
+2. The server sends the global model to all 12 clients
+3. Each client:
 
+   * Trains the model using its **local data**
+   * Uses **1 local epoch**
+4. Clients send updated model weights back to the server
+5. The server **averages the weights (FedAvg)**
+6. The updated global model is redistributed
+7. Steps 3–6 are repeated for **5 global rounds**
 
-⚙️ Methodology
+---
 
-Data Preprocessing: Clean dataset and handle class imbalance (fraud cases are rare).
+## 📈 Evaluation Strategy
 
-Baseline Models: Train centralized ML models (Random Forest, XGBoost, Neural Networks) for comparison.
+* Metric used: **Accuracy**
+* Evaluation is performed:
 
-Federated Learning Setup: Simulate multiple banks as separate clients and train using FedAvg.
+  * **Client-wise (per bank)**
+  * After **each global round**
+* Average accuracy across all clients is also reported
 
-Training & Evaluation: Compare centralized vs federated models using:
+---
 
-Precision, Recall, F1-score
+## 🧪 Experimental Setup
 
-Per-client performance metrics
+* Number of clients: 12
+* Global rounds: 5
+* Local epochs: 1
+* Batch size: 1024
+* Learning rate: 0.001
 
+---
 
-Enhancements:
+## ✅ Key Outcomes
 
-Implement secure aggregation for privacy.
+* Demonstrates **privacy-preserving fraud detection**
+* Shows impact of **Non-IID data** on federated models
+* Provides a strong baseline using **FedAvg**
+* Can be extended to **FedBN for better personalization**
 
-Add Explainable AI (XAI) (SHAP or LIME) to interpret flagged transactions.
+---
 
+## 🚀 Future Work
 
-📈 Expected Outcomes
+* Implement **FedBN** and compare with FedAvg
+* Add fraud-focused metrics (Recall, Precision)
+* Visualize performance across global rounds
+* Test with different Dirichlet α values
 
-A robust fraud detection model with strong accuracy and recall.
+---
 
-Demonstrate the advantages of federated learning over centralized training for privacy and scalability.
+## 🛠️ Technologies Used
 
-Help banks detect fraud cases that may only appear in other institutions.
+* Python
+* TensorFlow / Keras
+* NumPy, Pandas
+* Scikit-learn
+* KaggleHub
 
-Provide explainable results to help banks understand flagged transactions.
+---
 
+## 📌 Note
 
-🔑 Keywords
+This project is designed for **academic and research purposes**, focusing on federated learning concepts applied to financial fraud detection.
 
-Machine Learning, Federated Learning, Fraud Detection, Banking Security, Privacy-Preserving AI, PaySim Dataset
-
-
-📚 References / Literature
-
-McMahan et al., “Communication-Efficient Learning of Deep Networks from Decentralized Data” (FedAvg).
-
-Lopez et al., “PaySim: Mobile Money Payment Simulator” (2016).
-
-Zheng et al., “Federated Meta-Learning for Fraudulent Credit Card Detection” (IJCAI 2020).
-
-Bonawitz et al., “Practical Secure Aggregation for Federated Learning” (2016/2017).
 
