@@ -47,18 +47,42 @@ After rigorous evaluation on the IID test sets, the results conclusively demonst
 `Federated Learning` `Fraud Detection` `FedBN` `Deep Neural Networks` `Privacy preserving Machine Learning` `Non-IID` `Dirichlet Distribution` `PaySim` `Financial Technology (FinTech`
 
 ## References
-[1] B.McMahan, E.Moore, D.Ramage, S.Hampson and B.A.yArcas, “Comunication-Efficient Learning of Deep Networks from Decentralized Data,” in Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS), 2017.
+[1] B. McMahan, E. Moore, D. Ramage, S. Hampson and B. A. y Arcas, “Communication-Efficient Learning of Deep Networks from Decentralized Data,” in Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS), 2017.
 
-[2] T. Li, A. S. Sahu, M. Zaheer, M. Sanjabi, A. Talwalkar and V. Smith, “Federated Optimization in Heterogeneous Networks,” in Proceedings of Machine Learning and Systems  (MLSys), 2020.
+[2] T. Li, A. S. Sahu, M. Zaheer, M. Sanjabi, A. Talwalkar and V. Smith, “Federated Optimization in Heterogeneous Networks,” in Proceedings of Machine Learning and Systems (MLSys), 2020.
 
-[3] X. Li, M. Huang, Y. Yang, S. Wang and Z.Zhang, “On the Convergence of FedAvg on Non-IID Data,” International Conference on Learning Representations (ICLR), 2020.
+[3] X. Li, M. Huang, Y. Yang, S. Wang and Z. Zhang, “On the Convergence of FedAvg on Non-IID Data,” International Conference on Learning Representations (ICLR), 2020.
 
-[4] S. Ioffe and C. Szegedy, “Batch Normalization: Accelerating Deep Neural Network Training by Reducing Internal Covariate Shift,” in Proceedings of the International Conference on Machine Learning (ICML), 2015.
+[4] S. Ioffe and C. Szegedy, “Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift,” in Proceedings of the International Conference on Machine Learning (ICML), 2015.
 
-[5] X. Li, Y. Jiang, M.Zhang, X. Kamp and Q. Dou, “FedBN: Federated Learning on Non-IID Features via Local Batch Normalization,” in International Conference on Learning Representations (ICLR), 2021.
+[5] X. Li, Y. Jiang, M. Zhang, X. Kamp and Q. Dou, “FedBN: Federated Learning on Non-IID Features via Local Batch Normalization,” in International Conference on Learning Representations (ICLR), 2021.
 
-[6] I. Goodfellow. Y. Bengio and A. Courville, Deep Learning, Cambridge, MA, USA: MIT Press, 2016.
+[6] I. Goodfellow, Y. Bengio and A. Courville, Deep Learning, Cambridge, MA, USA: MIT Press, 2016.
 
-[7] C. C. Aggrawal, Neural Networks and Deep Learning: A Textbook, Cham, Switzerland: Springer, 2018.
+[7] C. C. Aggarwal, Neural Networks and Deep Learning: A Textbook, Cham, Switzerland: Springer, 2018.
 
-[8] D. P. Kingma and J. Ba, “Adam: A Method for Stochastic Optimization," International Conference on Learning Representations (ICLR), 2015.
+[8] D. P. Kingma and J. Ba, “Adam: A Method for Stochastic Optimization,” International Conference on Learning Representations (ICLR), 2015.
+
+[9] J. Konečný, H. B. McMahan, D. Ramage and P. Richtárik, “Federated Optimization: Distributed Machine Learning for On-Device Intelligence,” arXiv preprint arXiv:1610.02527, 2016.
+
+[10] A. Paszke et al., “PyTorch: An Imperative Style, High-Performance Deep Learning Library,” in Advances in Neural Information Processing Systems (NeurIPS), 2019.
+
+[11] M. Abadi et al., “TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems,” 2016. [Online]. Available: https://www.tensorflow.org/
+
+[12] F. Chollet, Deep Learning with Python, 2nd ed., Shelter Island, NY, USA: Manning Publications, 2021.
+
+[13] A. Géron, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 3rd ed., Sebastopol, CA, USA: O’Reilly Media, 2022.
+
+[14] Kaggle, “PaySim: Mobile Money Simulator Financial Dataset,” 2018. [Online]. Available: https://www.kaggle.com/ealaxi/paysim1
+
+[15] Kaggle, “Credit Card Fraud Detection Dataset,” 2016. [Online]. Available: https://www.kaggle.com/mlg-ulb/creditcardfraud
+
+[16] L. Breiman, “Random Forests,” Machine Learning, vol. 45, no. 1, pp. 5–32, 2001.
+
+[17] J. Brownlee, Deep Learning for Computer Vision, Machine Learning Mastery, 2019.
+
+[18] A. Ng, “Machine Learning Yearning,” deeplearning.ai, 2018.
+
+[19] N. Kairouz et al., “Advances and Open Problems in Federated Learning,” Foundations and Trends in Machine Learning, vol. 14, no. 1–2, pp. 1–210, 2021.
+
+[20] S. Ruder, “An Overview of Gradient Descent Optimization Algorithms,” arXiv preprint arXiv:1609.04747, 2016
