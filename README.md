@@ -44,7 +44,7 @@ After rigorous evaluation on the IID test sets, the results conclusively demonst
 - Privacy Assurance: The workflow guarantees data privacy by transmitting only model gradients (weights) instead of personally identifiable information (PII).
 
 ## Keywords
-`Federated Learning` `Fraud Detection` `FedBN` `Deep Neural Networks` `Privacy preserving Machine Learning` `Non-IID` `Dirichlet Distribution` `PaySim` `Financial Technology (FinTech`
+`Federated Learning` `Fraud Detection` `FedBN` `Deep Neural Networks` `Privacy preserving Machine Learning` `Non-IID` `Dirichlet Distribution` `PaySim` `Financial Technology (FinTech)`
 
 ## References
 [1] B. McMahan, E. Moore, D. Ramage, S. Hampson and B. A. y Arcas, “Communication-Efficient Learning of Deep Networks from Decentralized Data,” in Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS), 2017.
