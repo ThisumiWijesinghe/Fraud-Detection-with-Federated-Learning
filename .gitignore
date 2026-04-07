@@ -19,6 +19,7 @@ Images For presentation/18.webp
 my_lit_review.md
 *.md
 my_lit_review.md
+<<<<<<< Updated upstream
 *.zip
 *.pptx
 *.pdf
@@ -30,4 +31,33 @@ my_lit_review.md
 *.drawio
 *.txt
 *.md
+=======
+*.html
+Dataset/paysim dataset.csv.zip
+*.pdf
+*.pdf
+*.png
+*.pdf
+*.pdf
+*.pptx
+*.pdf
+*.zip
+*.webp
+*.jpeg
+*.csv
+*.txt
+*.md
+*.gif
+*.drawio
+*.md
+>>>>>>> Stashed changes
 README.md
+*.h5
+*.py
+*.h5
+*.py
+*.ipynb
+*.ipynb
+*.ipynb
+*.md
+AI_Project_New.ipynb
